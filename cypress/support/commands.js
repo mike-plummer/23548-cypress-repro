@@ -1,5 +1,6 @@
 Cypress.Commands.add('setupReproSession', () => {
   cy.session('ABC123', () => {
+    cy.visit('https://example.cypress.io')
     // Make a pretend "authorization" request and act on the response
     cy.request('http://www.google.com').then(() => {
       // When the request resolves, set items into session & local storage
